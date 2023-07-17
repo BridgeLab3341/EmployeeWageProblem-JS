@@ -1,4 +1,4 @@
-//UC1,UC2,UC3,UC4,UC5,UC6
+//UC1,UC2,UC3,UC4,UC5,UC6,UC7
 //const Is_Absent=0;
 const Part_Time=1;
 const Full_Time=2;
@@ -34,3 +34,17 @@ while(totalEmpHrs <= Max_Hrs_In_Month && totalWorkingDays < Num_Of_Working_Days)
 let empDialyWage=calcDailyWage(totalEmpHrs);
 console.log("Total Days:- "+totalWorkingDays+"\tTotal Hrs:- "+totalEmpHrs+"\tEmployee Wage:- "+empDialyWage);
 console.log(empDailyWageArray);
+//Forach
+const foreachArray=empDailyWageArray.forEach(x=>console.log(x));
+console.log(foreachArray);
+//arraymap
+let myMap=new Map();
+myMap.set(totalWorkingDays,empDialyWage);
+console.log(myMap);
+//filter
+const filteredArray=empDailyWageArray.filter(item=> item ==160);
+console.log(filteredArray);
+//find
+const findArray=empDailyWageArray.find(x=>x==160);
+console.log(findArray);
+
