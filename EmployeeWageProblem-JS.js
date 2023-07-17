@@ -11,6 +11,8 @@ let totalEmpHrs=0;
 let totalWorkingDays=0;
 let empHrs=0;
 let empDailyWageArray=new Array();
+let empDailyWageMap=new Map();
+let empDailyHrsMap=new Map();
 function GetWorkingHours(empcheck){
     switch(empcheck){
     case Part_Time:
@@ -30,8 +32,13 @@ while(totalEmpHrs <= Max_Hrs_In_Month && totalWorkingDays < Num_Of_Working_Days)
    let empHrs=GetWorkingHours(empcheck);
    totalEmpHrs+=empHrs;
    empDailyWageArray.push(calcDailyWage(empHrs));
+   empDailyWageMap.set(totalWorkingDays,calcDailyWage(empHrs));
+   empDailyHrsMap.set(totalWorkingDays,empHrs);
 }
+
 let empDialyWage=calcDailyWage(totalEmpHrs);
+console.log(empDailyHrsMap);
+console.log(empDailyWageMap);
 console.log("Total Days:- "+totalWorkingDays+"\tTotal Hrs:- "+totalEmpHrs+"\tEmployee Wage:- "+empDialyWage);
 console.log(empDailyWageArray);
 //Forach
